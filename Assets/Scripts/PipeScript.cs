@@ -14,6 +14,7 @@ public class PipeScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance.isGameOver) return;
         transform.Translate(_speed * Time.deltaTime * Vector2.left);
     }
 

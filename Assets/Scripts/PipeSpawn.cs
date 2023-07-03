@@ -20,6 +20,7 @@ public class PipeSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance.isGameOver) return;
         if(currentTime > delayTime)
         {
             currentTime = 0;

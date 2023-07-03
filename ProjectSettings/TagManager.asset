@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - destroy
+  - scoreDetect
+  - ground
   layers:
   - Default
   - TransparentFX
