@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip audioClip;
     public AudioClip endgameClip;
     public AudioClip scoreClip;
+    private bool isMuted;
 
 
 
@@ -31,18 +32,32 @@ public class AudioManager : MonoBehaviour
 
     public void PlayFlapBird()
     {
-        audioSource.PlayOneShot(audioClip);
+        if(!isMuted)
+        {
+            audioSource.PlayOneShot(audioClip);
+
+        }
     }
 
     public void PlayEndGame()
     {
-        audioSource.PlayOneShot(endgameClip);
+        if (!isMuted)
+        {
+            audioSource.PlayOneShot(endgameClip);
+        }
     }
 
     public void PlayScoreAudio()
     {
-        audioSource.PlayOneShot(scoreClip);
+        if (!isMuted)
+        {
+            audioSource.PlayOneShot(scoreClip);
+        }
 
+    }
+    public void MuteAudio()
+    {
+        isMuted = !isMuted;
     }
 
 }

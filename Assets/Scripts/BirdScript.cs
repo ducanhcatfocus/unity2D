@@ -14,6 +14,7 @@ public class BirdScript : MonoBehaviour
     {
         Debug.Log("dsadsd");
         rb = GetComponent<Rigidbody2D>();
+        rb.gravityScale = 0;
     }
 
 
@@ -26,11 +27,21 @@ public class BirdScript : MonoBehaviour
 
         if(isJump)
         {
-          
+    
             Jump();
-        }
 
+           
+        }
+        if (!GameManager.instance.isStartGame) return;
         RotateHead();
+    }
+
+    public void StartGame()
+    {
+  
+            rb.gravityScale = 1;
+
+       
     }
 
     protected void RotateHead()
