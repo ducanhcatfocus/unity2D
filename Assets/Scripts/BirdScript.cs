@@ -22,6 +22,8 @@ public class BirdScript : MonoBehaviour
     {
 
         if (GameManager.instance.isGameOver) return;
+        if (!GameManager.instance.isStartGame) return;
+
         bool isJump = Input.GetKeyDown(KeyCode.Space);
 
 
@@ -32,7 +34,6 @@ public class BirdScript : MonoBehaviour
 
            
         }
-        if (!GameManager.instance.isStartGame) return;
         RotateHead();
     }
 
